@@ -7,11 +7,27 @@ spring:
         username: root
         password: root
         driver-class-name: com.mysql.cj.jdbc.Driver
-
+    redis:
+        database: 0
+        host: localhost
+        port: 6379
+        password:
+        jedis:
+          pool:
+            max-active: 8
+            max-wait: -1
+            min-idle: 0
+            max-idle: 8
+        timeout: 100000
+    thymeleaf:
+      prefix: classpath:/templates/
+    mvc:
+      view:
+        suffix: .html
 ## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
 mybatis:
-  mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
-  type-aliases-package: com.example.demo.entity  # 注意：对应实体类的路径
+  mapper-locations: classpath:mapper/*.xml #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.example.demo.entity # 注意：对应实体类的路径
 
 #pagehelper分页插件
 pagehelper:
@@ -19,3 +35,5 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+#控制台日志输出
+#debug: true

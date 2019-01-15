@@ -1,0 +1,8 @@
+{
+  "name": "测试api文档",
+  "version": "0.1.0",
+  "description": "这只是一个测试的页面",
+  "title": "APIDOC 测试",
+  "url" : "https://127.0.0.1:8080/",
+  "sampleUrl":"https://127.0.0.1:8080/"
+}
