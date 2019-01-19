@@ -28,6 +28,14 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml #注意：一定要对应mapper映射xml文件的所在路径
   type-aliases-package: com.example.demo.entity # 注意：对应实体类的路径
+## 开发，生产，测试环境下的参数配置
+environments:
+    dev:
+        url: http://dev.bar.com
+        name: Developer Setup
+    prod:
+        url: http://foo.bar.com
+        name: My Cool App
 
 #pagehelper分页插件
 pagehelper:
@@ -35,5 +43,13 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+## springcloud
+#eureka:
+#  instance:
+#    hostname: eureka-service #主机名
+#  client:
+#    register-with-eureka: false #不注册自己
+#    fetch-registry: false #获取服务
+#    service-url:
 #控制台日志输出
 #debug: true

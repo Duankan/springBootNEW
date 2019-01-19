@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-11111111111111111111111
+<div class="file">
+文件：<input type="file" name="file"/>
+</div>
+<button class="submit">上传</button>
 </body>
+<script>
+    (function ($) {
+        ktw.upload=function () {
+            var formData = new FormData();
+            formData.append("myfile", document.getElementById("file1").files[0]);
+            var url=""
+            $.ajax({
+                url: "file/upload",
+                dataType: 'xml',
+                type: 'POST',
+                cache: false,
+                timeout: 2000,
+                async: false,
+                error: function (xml) {
+                    console.error(arguments);
+                },
+                success: function (xml) {
+                    config = $.xml2json(xml);
+                }
+            });
+        }
+        $(function () {
+        });
+    })(jQuery);
+</script>
 </html>

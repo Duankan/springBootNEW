@@ -14,12 +14,10 @@ import java.util.Map;
 public class WorkServiceImpl implements WorkService {
     @Resource
     WorkMapper workMapper;
-
     @Override
     public Work getWorkById(Integer id) {
         return workMapper.selectByPrimaryKey(id);
     }
-
     @Override
     public Map<String, Object> findAll() {
         Map<String, Object> result = new HashMap<>();
